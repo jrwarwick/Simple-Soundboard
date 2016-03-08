@@ -70,7 +70,7 @@
 	</script>
 
 	<audio id="audioBackground1" autoplay loop><!-- https://developer.mozilla.org/en-US/docs/Games/Techniques/Audio_for_Web_Games -->
-		<source src="audio/background.ogg" type="audio/ogg" />
+		<source src="audio/background-loop.ogg" type="audio/ogg" />
 	</audio>
 <div id="footer">
 	<p><strong><a href="./"><button id="reset" />Reset</button></a>

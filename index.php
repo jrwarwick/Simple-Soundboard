@@ -7,7 +7,8 @@
 	foreach ($directory as $fileinfo) {
 		if ($fileinfo->isFile()) {
 			$extension = $fileinfo->getExtension();
-			if($extension == "mp3"||$extension == "ogg"||$extension == "m4a"){
+			if( ($extension == "mp3"||$extension == "ogg"||$extension == "m4a")
+			 && !preg_match('/^background[-_]?loop/i',$fileinfo->getFilename()) ){
 				$audio[] = $fileinfo->getFilename();
 			}
 		}
@@ -73,10 +74,11 @@
 		<source src="audio/background-loop.ogg" type="audio/ogg" />
 	</audio>
 <div id="footer">
-	<p><strong><a href="./"><button id="reset" />Reset</button></a>
 	<p><button id="backgroundToggle">Background  &Vert; / &vrtri; </button>
+	<p><strong><a href="./"><button id="reset" />Reset</button></a>
 </div>
         <script>
+		$("#backgroundToggle").addClass('backgroundloopButton');
 		$("#backgroundToggle").click(function() {
 			var bga = $("#audioBackground1");
 			if (bga.prop("paused") == false) {
